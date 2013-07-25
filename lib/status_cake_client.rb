@@ -15,7 +15,10 @@ class StatusCakeClient
 
   def status_for(test_id)
     resp = @client.get test_url(test_id), nil, @headers
-    resp.body
+    {
+      :body => resp.body,
+      :code => resp.status
+    }
   end
 
   private
