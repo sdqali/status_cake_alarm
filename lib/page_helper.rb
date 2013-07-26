@@ -1,28 +1,44 @@
+# -*- coding: utf-8 -*-
 class PageHelper
-  def self.green_page(str)
-    page(str, "green")
+  def initialize(test_name)
+    @test_name = test_name
   end
 
-  def self.red_page(str)
-    page(str, "red")
+  def green_page(str)
+    page(str, "green", "Up")
   end
 
-  def self.yellow_page(str)
+  def red_page(str)
+    page(str, "red", "Down")
+  end
+
+  def yellow_page(str)
     page(str, "yellow")
   end
 
-  def self.page(str, color)
+  def page(str, color, status=nil)
   <<-HTML
 <html>
   <head>
     <title>
       Status Cake Alarm
     </title>
+    <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
   </head>
   <body style="background: #{color}">
-    <div class='stats'>
-      #{str}
+    <div class="status">
+      <div class="headline">
+        #{@test_name} is #{status}
+      </div>
+      <p class="toggle">
+        ►
+      </p>
+      <div class="detailed">
+        #{str}
+      </div>
     </div>
+    <script type="text/javascript" src="/javascript/app.js"></script>
   </body>
 </html>
 HTML

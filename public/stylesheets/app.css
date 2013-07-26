@@ -1,0 +1,14 @@
+.status {
+    margin-left: auto;
+    width: 80%;
+    margin-top: 100px;
+    color: white;
+}
+
+.status .headline {
+    font-size: 4em;
+}
+
+.status .detailed {
+    display: none;
+}
