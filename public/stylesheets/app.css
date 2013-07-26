@@ -12,3 +12,9 @@
 .status .detailed {
     display: none;
 }
+
+.status a, .status a:visited {
+        color: white;
+        text-decoration: none;
+        font-size: 40%
+    }

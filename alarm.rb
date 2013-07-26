@@ -23,8 +23,8 @@ get "/" do
   status = StatusCakeClient.new(SC_USERNAME, SC_API_KEY).status_for(SC_TEST_ID)
   return PageHelper.yellow_page(status) unless (status[:code] == 200)
   if SiteStatus.new(status[:body]).is_up?
-    PageHelper.new(SC_TEST_NAME).green_page(status)
+    PageHelper.new(SC_TEST_NAME, SC_TEST_ID).green_page(status)
   else
-    PageHelper.new(SC_TEST_NAME).red_page(status)
+    PageHelper.new(SC_TEST_NAME, SC_TEST_ID).red_page(status)
   end
 end

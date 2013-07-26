@@ -1,15 +1,16 @@
 # -*- coding: utf-8 -*-
 class PageHelper
-  def initialize(test_name)
+  def initialize(test_name, test_id)
     @test_name = test_name
+    @test_id = test_id
   end
 
   def green_page(str)
-    page(str, "green", "Up")
+    page(str, "green", "Up ☺")
   end
 
   def red_page(str)
-    page(str, "red", "Down")
+    page(str, "red", "Down ☹")
   end
 
   def yellow_page(str)
@@ -30,6 +31,7 @@ class PageHelper
     <div class="status">
       <div class="headline">
         #{@test_name} is #{status}
+        <a href="https://www.statuscake.com/App/AllStatus.php?tid=#{@test_id}" target="_blank">   ↪</a>
       </div>
       <p class="toggle">
         ►
