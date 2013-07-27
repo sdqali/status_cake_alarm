@@ -21,7 +21,7 @@ SC_TEST_NAME = SETTINGS["test_name"]
 
 get "/" do
   status = StatusCakeClient.new(SC_USERNAME, SC_API_KEY).status_for(SC_TEST_ID)
-  return PageHelper.yellow_page(status) unless (status[:code] == 200)
+  return PageHelper.new(SC_TEST_NAME, SC_TEST_ID, nil).yellow_page(status) unless (status[:code] == 200)
   site_status = SiteStatus.new(status[:body])
   page_helper = PageHelper.new(SC_TEST_NAME, SC_TEST_ID, site_status.last_check_time)
   if site_status.is_up?

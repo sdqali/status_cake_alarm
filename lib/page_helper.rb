@@ -15,7 +15,7 @@ class PageHelper
   end
 
   def yellow_page(str)
-    page(str, "yellow", "Unknown")
+    page(str, "gold", "Unknown")
   end
 
   private
