@@ -11,14 +11,16 @@ class PageHelper
   end
 
   def red_page(str)
-    page(str, "red", "Down ☹")
+    page(str, "red", "Down ☹", true)
   end
 
   def yellow_page(str)
-    page(str, "yellow")
+    page(str, "yellow", "Unknown")
   end
 
-  def page(str, color, status=nil)
+  private
+
+  def page(str, color, status, alarm=nil)
   <<-HTML
 <html>
   <head>
@@ -40,6 +42,9 @@ class PageHelper
           Last Tested At: <abbr class="timeago" title="#{@last_check_time}"> </abbr>
         </h3>
       </div>
+
+      #{audio_tags if alarm}
+
       <p class="toggle">
         ►
       </p>
@@ -54,4 +59,14 @@ class PageHelper
 </html>
 HTML
   end
+
+  def audio_tags
+    <<-HTML
+<audio autoplay="autoplay" controls="controls" loop="loop">
+  <source src="/audio/fire_alarm.mp3" type="audio/mpeg">
+  <source src="/audio/fire_alarm.wav" type="audio/wav">
+</audio>
+HTML
+  end
+
 end
