@@ -9,4 +9,5 @@ An alarm to attract your attention when your web server goes down. Currently fet
 
 * Copy `config/conf.yml.example` to `config/conf.yml`
 * Add config values
-* `./alarm.rb`
+* Run `bundle install`
+* Run `./alarm.rb` to start the app.
