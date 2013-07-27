@@ -25,7 +25,7 @@ class PageHelper
 <html>
   <head>
     <title>
-      Status Cake Alarm
+      #{@test_name} Status
     </title>
     <link rel="stylesheet" type="text/css" href="/stylesheets/app.css">
     <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
