@@ -55,7 +55,6 @@ class PageHelper
     <script type="text/javascript" src="/javascript/app.js"></script>
     <script type="text/javascript">
     </script>
-    <div class="fake-logo">☭</div>
   </body>
 </html>
 HTML
